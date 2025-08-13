@@ -1,0 +1,13 @@
+steps:
+  - name: 'hashicorp/terraform:1.3.0'
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+        cd infra
+        terraform init
+        terraform apply -auto-approve
+    env:
+      - 'GOOGLE_CLOUD_PROJECT=cto-tinaa-apps-svcs-np-461414'
+      - 'TF_VAR_project_id=cto-tinaa-apps-svcs-np-461414'
+      - 'TF_VAR_region=us-central1'
