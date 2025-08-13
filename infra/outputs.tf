@@ -4,3 +4,6 @@ output "pubsub_topic" {
 output "pubsub_subscription" {
   value = google_pubsub_subscription.celery_tasks_sub.name
 }
+output "cloudbuild_trigger_id" {
+  value = google_cloudbuild_trigger.main_branch_trigger.id
+}

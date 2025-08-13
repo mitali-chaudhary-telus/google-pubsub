@@ -6,8 +6,12 @@ steps:
       - |
         cd infra
         terraform init
-        terraform apply -auto-approve
+        terraform apply -auto-approve \
+          -var="repo_owner=${_REPO_OWNER}" \
+          -var="repo_name=${_REPO_NAME}"
     env:
       - 'GOOGLE_CLOUD_PROJECT=cto-tinaa-apps-svcs-np-461414'
       - 'TF_VAR_project_id=cto-tinaa-apps-svcs-np-461414'
       - 'TF_VAR_region=us-central1'
+      - 'TF_VAR_repo_owner=${_REPO_OWNER}'
+      - 'TF_VAR_repo_name=${_REPO_NAME}'

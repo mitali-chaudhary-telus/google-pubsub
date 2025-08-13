@@ -8,6 +8,11 @@ resource "google_project_service" "pubsub" {
   service = "pubsub.googleapis.com"
 }
 
+resource "google_project_service" "cloudbuild" {
+  project = var.project_id
+  service = "cloudbuild.googleapis.com"
+}
+
 resource "google_pubsub_topic" "celery_tasks" {
   name     = "celery-tasks"
   project  = var.project_id

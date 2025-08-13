@@ -9,3 +9,13 @@ variable "project_id" {
   type        = string
   default     = "cto-tinaa-apps-svcs-np-461414"
 }
+
+variable "repo_owner" {
+  description = "GitHub repo owner"
+  type        = string
+}
+
+variable "repo_name" {
+  description = "GitHub repo name"
+  type        = string
+}
